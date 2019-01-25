@@ -5,6 +5,13 @@ class Smurfs extends Component {
   render() {
     return (
       <div className="Smurfs">
+        <div>
+          <img
+            className="smurfs-village-img"
+            src="https://www.topbestalternatives.com/wp-content/uploads/2017/11/smurfs-village.jpg"
+            alt="Smurfs Village"
+          />
+        </div>
         <ul>
           {this.props.smurfs.map(smurf => {
             return (

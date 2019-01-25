@@ -21,7 +21,8 @@ class SmurfForm extends Component {
         height: this.state.height
       })
       .then(res => {
-        console.log(res);
+        console.log(res.data);
+        this.props.handleAddSmurf(res.data);
         this.props.history.push("/");
       })
       .catch(err => console.log(err));
@@ -39,29 +40,36 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div className="SmurfForm">
-        <h2>Add New Smurf</h2>
-        <form onSubmit={this.addSmurf}>
-          <input
-            onChange={this.handleInputChange}
-            placeholder="Name"
-            value={this.state.name}
-            name="name"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="Age"
-            value={this.state.age}
-            name="age"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="Height(cm)"
-            value={this.state.height}
-            name="height"
-          />
-          <button type="submit">Add to the village</button>
-        </form>
+      <div>
+        <div className="SmurfForm">
+          <h2>Add New Smurf</h2>
+          <form onSubmit={this.addSmurf}>
+            <input
+              onChange={this.handleInputChange}
+              placeholder="Name"
+              value={this.state.name}
+              name="name"
+            />
+            <input
+              onChange={this.handleInputChange}
+              placeholder="Age"
+              value={this.state.age}
+              name="age"
+            />
+            <input
+              onChange={this.handleInputChange}
+              placeholder="Height(cm)"
+              value={this.state.height}
+              name="height"
+            />
+            <button type="submit">Add to the village</button>
+          </form>
+        </div>
+        <img
+          className="lost-smurfs-img"
+          src="https://cdn.vox-cdn.com/thumbor/oIRY68qFM3SiUyNQWoYwt_c3BM4=/0x0:2560x1600/1200x800/filters:focal(1662x443:2070x851)/cdn.vox-cdn.com/uploads/chorus_image/image/54121337/smurfscover.0.jpg"
+          alt="Smurfs Lost in Village"
+        />
       </div>
     );
   }

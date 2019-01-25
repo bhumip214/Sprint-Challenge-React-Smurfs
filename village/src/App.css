@@ -8,7 +8,7 @@
   justify-content: space-between;
   background: rgb(134, 200, 223);
   padding: 30px 200px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
@@ -41,6 +41,7 @@
   padding: 5px;
   color: lightcoral;
 }
+
 /* =========================== smurfs style ======================== */
 .Smurfs {
   padding: 0 250px;
@@ -51,6 +52,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.smurfs-village-img {
+  height: 400px;
+  margin-bottom: 40px;
 }
 
 .Smurf {
@@ -121,4 +126,9 @@
   color: white;
   cursor: pointer;
   border: 1px solid white;
+}
+
+.lost-smurfs-img {
+  padding-top: 40px;
+  width: 500px;
 }

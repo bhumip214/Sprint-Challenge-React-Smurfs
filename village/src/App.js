@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav className="app-header">
+        <div className="header">
           <h1>Smurf Village</h1>
           <div className="nav-links">
             <NavLink
@@ -51,12 +51,12 @@ class App extends Component {
             <NavLink
               to="/smurf-form"
               activeClassName="active-link"
-              className="link-friendForm"
+              className="link-smurfForm"
             >
               Add Smurf
             </NavLink>
           </div>
-        </nav>
+        </div>
         <Route
           exact
           path="/smurf-form"

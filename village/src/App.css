@@ -1,3 +1,124 @@
 .App {
   text-align: center;
 }
+
+/* =========================== header style ======================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(134, 200, 223);
+  padding: 30px 200px;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.link-home {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.link-smurfForm {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.active-link {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  color: lightcoral;
+}
+/* =========================== smurfs style ======================== */
+.Smurfs {
+  padding: 0 250px;
+  margin: 0 auto;
+}
+
+.Smurfs ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Smurf {
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  width: 250px;
+}
+.Smurf h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: lightcoral;
+  flex: 1;
+  margin-left: 10px;
+}
+.Smurf-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  margin: 10px;
+  display: flex;
+}
+
+.trash-icon {
+  cursor: pointer;
+}
+
+.Smurf p {
+  padding-top: 10px;
+}
+
+/* =========================== form style ======================== */
+.SmurfForm {
+  padding: 20px;
+  border: 1px solid grey;
+  width: 300px;
+  margin: 0 auto;
+  background-color: lightgrey;
+}
+.SmurfForm h2 {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.SmurfForm form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.SmurfForm input {
+  font-size: 14px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.SmurfForm button {
+  font-size: 14px;
+  width: 150px;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lightcoral;
+}
+.SmurfForm button:hover {
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+}

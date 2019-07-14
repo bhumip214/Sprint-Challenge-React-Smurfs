@@ -6,6 +6,18 @@ import "./App.css";
 import SmurfForm from "./components/SmurfForm";
 import Smurfs from "./components/Smurfs";
 
+function status(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response);
+  } else {
+    return Promise.reject(new Error(response.statusText));
+  }
+}
+
+function json(response) {
+  return response.json();
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,24 +36,46 @@ class App extends Component {
   // You'll need to make sure you have the right properties on state and pass them down to props.
 
   componentDidMount() {
-    axios
-      .get("http://localhost:3333/smurfs")
-      .then(res => {
-        this.setState({ smurfs: res.data });
+    fetch("http://localhost:3333/smurfs")
+      .then(status)
+      .then(json)
+      .then(json => {
+        console.log(json);
+        this.setState({ smurfs: json });
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log(error);
       });
+
+    // axios
+    //   .get("http://localhost:3333/smurfs")
+    //   .then(res => {
+    //     this.setState({ smurfs: res.data });
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
   }
 
   deleteSmurf = (e, id) => {
     e.preventDefault();
-    axios
-      .delete(`http://localhost:3333/smurfs/${id}`)
-      .then(resp => {
-        this.setState({ smurfs: resp.data });
+    fetch(`http://localhost:3333/smurfs/${id}`, { method: "delete" })
+      .then(status)
+      .then(json)
+      .then(json => {
+        console.log(json);
+        this.setState({ smurfs: json });
       })
-      .catch(err => console.log(err));
+      .catch(error => {
+        console.log(error);
+      });
+
+    // axios
+    //   .delete(`http://localhost:3333/smurfs/${id}`)
+    //   .then(resp => {
+    //     this.setState({ smurfs: resp.data });
+    //   })
+    //   .catch(err => console.log(err));
   };
 
   handleAddSmurf = smurfs => {
